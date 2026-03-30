@@ -52,8 +52,8 @@ fetch('data/trade_flows.json')
   });
 
 function initializeSlideSystem() {
-  // Determine most complete year (use 2023 as it has most complete data)
-  selectedYear = '2023';
+  // Use all available export data across different years
+  selectedYear = 'mixed'; // Will handle multiple years in calculations
   
   // Initialize maps
   initializeMaps();
@@ -130,29 +130,31 @@ function showSlide(slideNum) {
    SLIDE 1: ALL EXPORT DATA / CONTEXT
    =============================== */
 function loadSlide1() {
-  // Update year display
-  document.getElementById('slide1-year').textContent = `Data Year: ${selectedYear}`;
+  // Update year display to show mixed years
+  document.getElementById('slide1-year').textContent = `Data Years: 2023-2024`;
   
   // Calculate total statistics across all export categories
   let totalPartners = new Set();
   let totalValue = 0;
   let categoryCount = 0;
+  let years = new Set();
   
   Object.values(TRADE_DATA.exports).forEach(category => {
-    if (category.year === selectedYear || category.year.toString() === selectedYear) {
-      categoryCount++;
-      category.partners.forEach(partner => {
-        if (partner.country !== "European Union") {
-          totalPartners.add(partner.country);
-          totalValue += partner.valueUSD || (partner.valueKUSD * 1000);
-        }
-      });
-    }
+    // Include all export categories regardless of year
+    categoryCount++;
+    years.add(category.year);
+    category.partners.forEach(partner => {
+      if (partner.country !== "European Union") {
+        totalPartners.add(partner.country);
+        const value = partner.valueUSD || (partner.valueKUSD ? partner.valueKUSD * 1000 : 0);
+        totalValue += isNaN(value) ? 0 : value;
+      }
+    });
   });
   
-  // Update stats display
+  // Update stats display with validation
   document.getElementById('total-partners').textContent = totalPartners.size;
-  document.getElementById('total-value').textContent = formatUSD(totalValue);
+  document.getElementById('total-value').textContent = formatUSD(isNaN(totalValue) ? 0 : totalValue);
   document.getElementById('total-categories').textContent = categoryCount;
   
   // Draw all export flows on map 1
@@ -170,13 +172,12 @@ function drawAllExportsMap(targetMap) {
   
   // Draw all export partners and flows
   Object.values(TRADE_DATA.exports).forEach(category => {
-    if (category.year === selectedYear || category.year.toString() === selectedYear) {
-      category.partners.forEach(partner => {
-        if (partner.country !== "European Union") {
-          drawExportFlow(targetMap, partner, category.label);
-        }
-      });
-    }
+    // Include all export categories regardless of year
+    category.partners.forEach(partner => {
+      if (partner.country !== "European Union") {
+        drawExportFlow(targetMap, partner, category.label);
+      }
+    });
   });
 }
 
@@ -184,8 +185,8 @@ function drawAllExportsMap(targetMap) {
    SLIDE 2: TOP 3 PARTNERS
    =============================== */
 function loadSlide2() {
-  // Update year display
-  document.getElementById('slide2-year').textContent = `Data Year: ${selectedYear}`;
+  // Update year display to show mixed years
+  document.getElementById('slide2-year').textContent = `Data Years: 2023-2024`;
   
   // Calculate top 3 partners across all categories
   top3Partners = calculateTop3Partners();
@@ -202,29 +203,30 @@ function calculateTop3Partners() {
   const countryValues = {};
   
   Object.values(TRADE_DATA.exports).forEach(category => {
-    if (category.year === selectedYear || category.year.toString() === selectedYear) {
-      category.partners.forEach(partner => {
-        if (partner.country !== "European Union") {
-          const value = partner.valueUSD || (partner.valueKUSD * 1000);
-          if (!countryValues[partner.country]) {
-            countryValues[partner.country] = 0;
-          }
-          countryValues[partner.country] += value;
+    // Include all export categories regardless of year
+    category.partners.forEach(partner => {
+      if (partner.country !== "European Union") {
+        const value = partner.valueUSD || (partner.valueKUSD ? partner.valueKUSD * 1000 : 0);
+        const validValue = isNaN(value) ? 0 : value;
+        
+        if (!countryValues[partner.country]) {
+          countryValues[partner.country] = 0;
         }
-      });
-    }
+        countryValues[partner.country] += validValue;
+      }
+    });
   });
   
   // Convert to array and sort by value
   const sortedCountries = Object.entries(countryValues)
-    .map(([country, value]) => ({ country, value }))
+    .map(([country, value]) => ({ country, value: isNaN(value) ? 0 : value }))
     .sort((a, b) => b.value - a.value)
     .slice(0, 3);
   
   // Calculate percentages
   const totalValue = sortedCountries.reduce((sum, country) => sum + country.value, 0);
   sortedCountries.forEach(country => {
-    country.share = (country.value / totalValue * 100).toFixed(1);
+    country.share = totalValue > 0 ? (country.value / totalValue * 100).toFixed(1) : '0.0';
   });
   
   return sortedCountries;
@@ -260,8 +262,8 @@ function drawTop3PartnersMap() {
    SLIDE 3: DOWNLOAD REPORTS
    =============================== */
 function loadSlide3() {
-  // Update year display
-  document.getElementById('slide3-year').textContent = `Data Year: ${selectedYear}`;
+  // Update year display to show mixed years
+  document.getElementById('slide3-year').textContent = `Data Years: 2023-2024`;
   
   // Update download buttons with top 3 partner names
   top3Partners.forEach((partner, index) => {
@@ -314,7 +316,7 @@ function generateReportContent(partner) {
   // 1. TITLE
   report.push('='.repeat(60));
   report.push(`Morocco Phosphate Export Partner Report — ${partner.country}`);
-  report.push(`${selectedYear} • Rank #${top3Partners.indexOf(partner) + 1} Partner`);
+  report.push(`2023-2024 • Rank #${top3Partners.indexOf(partner) + 1} Partner`);
   report.push('='.repeat(60));
   report.push('');
   
@@ -336,7 +338,7 @@ function generateReportContent(partner) {
   report.push('CATEGORY BREAKDOWN');
   report.push('-'.repeat(30));
   tradeStats.categories.forEach(cat => {
-    report.push(`${cat.name}:`);
+    report.push(`${cat.name} (${cat.year}):`);
     report.push(`  Export Value: $${formatUSD(cat.value)}`);
     report.push(`  Share: ${cat.share}%`);
     if (cat.quantity) {
@@ -360,7 +362,7 @@ function generateReportContent(partner) {
   report.push('• African Development Bank - Regional market analysis');
   report.push('');
   report.push('Methodology: Data aggregated across all phosphate product');
-  report.push('categories. EU aggregate values excluded from partner rankings.');
+  report.push('categories (2023-2024). EU aggregate values excluded from partner rankings.');
   report.push('Values converted to USD for consistency across reporting periods.');
   report.push('');
   
@@ -378,22 +380,25 @@ function calculateTradeStats(partner) {
   const categories = [];
   
   Object.values(TRADE_DATA.exports).forEach(category => {
-    if (category.year === selectedYear || category.year.toString() === selectedYear) {
-      const partnerData = category.partners.find(p => p.country === partner.country);
-      if (partnerData) {
-        const value = partnerData.valueUSD || (partnerData.valueKUSD * 1000);
-        const quantity = partnerData.qtyKg ? partnerData.qtyKg / 1000 : null;
-        
-        totalValue += value;
-        if (quantity) totalQuantity += quantity;
-        
-        categories.push({
-          name: category.label,
-          value: value,
-          quantity: quantity,
-          share: 0 // Will calculate below
-        });
-      }
+    // Include all export categories regardless of year
+    const partnerData = category.partners.find(p => p.country === partner.country);
+    if (partnerData) {
+      const value = partnerData.valueUSD || (partnerData.valueKUSD ? partnerData.valueKUSD * 1000 : 0);
+      const quantity = partnerData.qtyKg ? partnerData.qtyKg / 1000 : null;
+      
+      const validValue = isNaN(value) ? 0 : value;
+      const validQuantity = quantity && !isNaN(quantity) ? quantity : null;
+      
+      totalValue += validValue;
+      if (validQuantity !== null) totalQuantity += validQuantity;
+      
+      categories.push({
+        name: category.label,
+        value: validValue,
+        quantity: validQuantity,
+        share: 0, // Will calculate below
+        year: category.year // Include year for context
+      });
     }
   });
   
@@ -406,8 +411,8 @@ function calculateTradeStats(partner) {
   categories.sort((a, b) => b.value - a.value);
   
   return {
-    totalValue,
-    totalQuantity,
+    totalValue: isNaN(totalValue) ? 0 : totalValue,
+    totalQuantity: isNaN(totalQuantity) ? 0 : totalQuantity,
     categoryCount: categories.length,
     categories
   };
@@ -417,10 +422,10 @@ function generateExecutiveSummary(partner, tradeStats) {
   const dominantCategory = tradeStats.categories[0];
   const rank = top3Partners.indexOf(partner) + 1;
   
-  let summary = `This report analyzes Morocco's phosphate exports to ${partner.country} in ${selectedYear}, where ${partner.country} ranks #${rank} among export partners with a total value of $${formatUSD(tradeStats.totalValue)}. `;
+  let summary = `This report analyzes Morocco's phosphate exports to ${partner.country} across 2023-2024, where ${partner.country} ranks #${rank} among export partners with a total value of $${formatUSD(tradeStats.totalValue)}. `;
   
   if (dominantCategory) {
-    summary += `Trade is primarily driven by ${dominantCategory.name.toLowerCase()}, `;
+    summary += `Trade is primarily driven by ${dominantCategory.name.toLowerCase()} (${dominantCategory.year}), `;
     
     // Add intelligence about concentration
     if (dominantCategory.share > 70) {
@@ -595,10 +600,11 @@ function drawExportFlow(targetMap, partner, categoryLabel) {
 
   // Partner dot
   const partnerMarker = makeCircleMarker(end.lat, end.lng, cssVar("--col-partner"));
-  const value = partner.valueUSD || (partner.valueKUSD * 1000);
+  const value = partner.valueUSD || (partner.valueKUSD ? partner.valueKUSD * 1000 : 0);
+  const validValue = isNaN(value) ? 0 : value;
   
   partnerMarker.bindTooltip(
-    `<strong>${partner.country}</strong><br/>Exports to ${categoryLabel}<br/>$${formatUSD(value)} (${selectedYear})`,
+    `<strong>${partner.country}</strong><br/>Exports to ${categoryLabel}<br/>$${formatUSD(validValue)} (2023-2024)`,
     { className:"customTip", direction:"top" }
   );
   targetMap.partnersLayer.addLayer(partnerMarker);
