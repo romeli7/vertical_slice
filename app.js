@@ -19,8 +19,8 @@ fetch('data/trade_flows.json')
           year: data.fertilizers_bulk.year,
           partners: data.fertilizers_bulk.rows.map(row => ({
             country: row.partner,
-            valueUSD: row.value_usd,
-            qtyKg: row.quantity_kg
+            value_usd: row.value_usd,
+            quantity_kg: row.quantity_kg
           }))
         },
         phosphoric_acid: {
@@ -28,8 +28,8 @@ fetch('data/trade_flows.json')
           year: data.phosphoric_acid.year,
           partners: data.phosphoric_acid.rows.map(row => ({
             country: row.partner,
-            valueUSD: row.value_usd,
-            qtyKg: row.quantity_kg
+            value_usd: row.value_usd,
+            quantity_kg: row.quantity_kg
           }))
         },
         phosphate_rock: {
@@ -37,8 +37,8 @@ fetch('data/trade_flows.json')
           year: data.phosphate_rock_raw.year,
           partners: data.phosphate_rock_raw.rows.map(row => ({
             country: row.partner,
-            valueUSD: row.value_usd,
-            qtyKg: row.quantity_kg
+            value_usd: row.value_usd,
+            quantity_kg: row.quantity_kg
           }))
         }
       }
@@ -146,7 +146,7 @@ function loadSlide1() {
     category.partners.forEach(partner => {
       if (partner.country !== "European Union") {
         totalPartners.add(partner.country);
-        const value = partner.value_usd || (partner.value_kgd ? partner.value_kgd * 1000 : 0);
+        const value = partner.value_usd || 0;
         totalValue += isNaN(value) ? 0 : value;
       }
     });
@@ -204,10 +204,9 @@ function calculateTop3Partners() {
   
   Object.values(TRADE_DATA.exports).forEach(category => {
     // Include all export categories regardless of year
-    console.log(`Processing category: ${category.label} with ${category.partners.length} partners`);
     category.partners.forEach(partner => {
       if (partner.country !== "European Union") {
-        const value = partner.value_usd || (partner.value_kgd ? partner.value_kgd * 1000 : 0);
+        const value = partner.value_usd || 0;
         const validValue = isNaN(value) ? 0 : value;
         
         if (!countryValues[partner.country]) {
@@ -384,7 +383,7 @@ function calculateTradeStats(partner) {
     // Include all export categories regardless of year
     const partnerData = category.partners.find(p => p.country === partner.country);
     if (partnerData) {
-      const value = partnerData.value_usd || (partnerData.value_kgd ? partnerData.value_kgd * 1000 : 0);
+      const value = partnerData.value_usd || 0;
       const quantity = partnerData.quantity_kg ? partnerData.quantity_kg / 1000 : null;
       
       const validValue = isNaN(value) ? 0 : value;
@@ -601,7 +600,7 @@ function drawExportFlow(targetMap, partner, categoryLabel) {
 
   // Partner dot
   const partnerMarker = makeCircleMarker(end.lat, end.lng, cssVar("--col-partner"));
-  const value = partner.value_usd || (partner.value_kgd ? partner.value_kgd * 1000 : 0);
+  const value = partner.value_usd || 0;
   const validValue = isNaN(value) ? 0 : value;
   
   partnerMarker.bindTooltip(
