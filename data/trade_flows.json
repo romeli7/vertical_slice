@@ -1,0 +1,828 @@
+{
+  "phosphoric_acid": {
+    "year": 2024,
+    "direction": "export",
+    "product_code": "280920",
+    "product_label": "Phosphoric acid and polyphosphoric acids",
+    "rows": [
+      {
+        "partner": "Pakistan",
+        "value_usd": 1056110860.0,
+        "quantity_kg": 1601100000.0
+      },
+      {
+        "partner": "India",
+        "value_usd": 788396510.0,
+        "quantity_kg": 1201540000.0
+      },
+      {
+        "partner": "Turkey",
+        "value_usd": 231880810.0,
+        "quantity_kg": 352479000.0
+      },
+      {
+        "partner": "Spain",
+        "value_usd": 195375090.0,
+        "quantity_kg": 301652000.0
+      },
+      {
+        "partner": "Belgium",
+        "value_usd": 195100430.0,
+        "quantity_kg": 294118000.0
+      },
+      {
+        "partner": "Netherlands",
+        "value_usd": 93953060.0,
+        "quantity_kg": 142920000.0
+      },
+      {
+        "partner": "Brazil",
+        "value_usd": 86300380.0,
+        "quantity_kg": 131302000.0
+      },
+      {
+        "partner": "Mexico",
+        "value_usd": 79051490.0,
+        "quantity_kg": 126304000.0
+      },
+      {
+        "partner": "France",
+        "value_usd": 68152360.0,
+        "quantity_kg": 103583000.0
+      },
+      {
+        "partner": "Bangladesh",
+        "value_usd": 25712040.0,
+        "quantity_kg": 37957600.0
+      },
+      {
+        "partner": "United States",
+        "value_usd": 16951280.0,
+        "quantity_kg": 25786700.0
+      },
+      {
+        "partner": "Italy",
+        "value_usd": 8531450.0,
+        "quantity_kg": 12656400.0
+      },
+      {
+        "partner": "Portugal",
+        "value_usd": 4879740.0,
+        "quantity_kg": 7267080.0
+      },
+      {
+        "partner": "Poland",
+        "value_usd": 3255240.0,
+        "quantity_kg": 5888300.0
+      },
+      {
+        "partner": "Egypt, Arab Rep.",
+        "value_usd": 1787420.0,
+        "quantity_kg": 2727880.0
+      },
+      {
+        "partner": "Eswatini",
+        "value_usd": 1539290.0,
+        "quantity_kg": 2336920.0
+      },
+      {
+        "partner": "Guatemala",
+        "value_usd": 642480.0,
+        "quantity_kg": 976800.0
+      },
+      {
+        "partner": "Nicaragua",
+        "value_usd": 228540.0,
+        "quantity_kg": 369600.0
+      },
+      {
+        "partner": "Colombia",
+        "value_usd": 198510.0,
+        "quantity_kg": 290400.0
+      },
+      {
+        "partner": "Israel",
+        "value_usd": 198070.0,
+        "quantity_kg": 314200.0
+      },
+      {
+        "partner": "Argentina",
+        "value_usd": 168260.0,
+        "quantity_kg": 264000.0
+      },
+      {
+        "partner": "South Africa",
+        "value_usd": 82570.0,
+        "quantity_kg": 132000.0
+      },
+      {
+        "partner": "Paraguay",
+        "value_usd": 68950.0,
+        "quantity_kg": 105600.0
+      },
+      {
+        "partner": "Peru",
+        "value_usd": 50190.0,
+        "quantity_kg": 79200.0
+      },
+      {
+        "partner": "Mauritania",
+        "value_usd": 47030.0,
+        "quantity_kg": 47964.0
+      },
+      {
+        "partner": "Cote d'Ivoire",
+        "value_usd": 39670.0,
+        "quantity_kg": 52800.0
+      },
+      {
+        "partner": "Panama",
+        "value_usd": 38550.0,
+        "quantity_kg": 52800.0
+      },
+      {
+        "partner": "El Salvador",
+        "value_usd": 38550.0,
+        "quantity_kg": 52800.0
+      },
+      {
+        "partner": "Senegal",
+        "value_usd": 29500.0,
+        "quantity_kg": 28000.0
+      },
+      {
+        "partner": "Uruguay",
+        "value_usd": 18800.0,
+        "quantity_kg": 26400.0
+      },
+      {
+        "partner": "Venezuela",
+        "value_usd": 15240.0,
+        "quantity_kg": 26400.0
+      },
+      {
+        "partner": "Bolivia",
+        "value_usd": 15240.0,
+        "quantity_kg": 26400.0
+      },
+      {
+        "partner": "Switzerland",
+        "value_usd": 930.0,
+        "quantity_kg": 3400.0
+      },
+      {
+        "partner": "Slovenia",
+        "value_usd": 0.0,
+        "quantity_kg": 8.35
+      }
+    ]
+  },
+  "fertilizers_bulk": {
+    "year": 2024,
+    "direction": "export",
+    "product_code": "3105",
+    "product_label": "Fertilizers; mineral or chemical, containing 2 or 3 of the elements nitrogen, phosphorus, potassium; other fertilisers; goods of chapter 31 in tablets or packages of gross weight not exceeding 10kg",
+    "rows": [
+      {
+        "partner": "Brazil",
+        "value_usd": 1287889770.0,
+        "quantity_kg": 2527070000.0
+      },
+      {
+        "partner": "India",
+        "value_usd": 1207007000.0,
+        "quantity_kg": 2263280000.0
+      },
+      {
+        "partner": "Djibouti",
+        "value_usd": 819975200.0,
+        "quantity_kg": 1637870000.0
+      },
+      {
+        "partner": "Australia",
+        "value_usd": 814603870.0,
+        "quantity_kg": 1543250000.0
+      },
+      {
+        "partner": "Argentina",
+        "value_usd": 578890380.0,
+        "quantity_kg": 1103300000.0
+      },
+      {
+        "partner": "Bangladesh",
+        "value_usd": 577888820.0,
+        "quantity_kg": 1098670000.0
+      },
+      {
+        "partner": "United States",
+        "value_usd": 454403560.0,
+        "quantity_kg": 858282000.0
+      },
+      {
+        "partner": "Canada",
+        "value_usd": 368757530.0,
+        "quantity_kg": 704686000.0
+      },
+      {
+        "partner": "Turkey",
+        "value_usd": 279093090.0,
+        "quantity_kg": 521310000.0
+      },
+      {
+        "partner": "Spain",
+        "value_usd": 243132880.0,
+        "quantity_kg": 452712000.0
+      },
+      {
+        "partner": "Poland",
+        "value_usd": 186488830.0,
+        "quantity_kg": 347426000.0
+      },
+      {
+        "partner": "France",
+        "value_usd": 177512020.0,
+        "quantity_kg": 347386000.0
+      },
+      {
+        "partner": "Cote d'Ivoire",
+        "value_usd": 163409860.0,
+        "quantity_kg": 323252000.0
+      },
+      {
+        "partner": "Lithuania",
+        "value_usd": 160984310.0,
+        "quantity_kg": 292956000.0
+      },
+      {
+        "partner": "Kenya",
+        "value_usd": 140424000.0,
+        "quantity_kg": 260928000.0
+      },
+      {
+        "partner": "Benin",
+        "value_usd": 134930760.0,
+        "quantity_kg": 242000000.0
+      },
+      {
+        "partner": "Romania",
+        "value_usd": 134510020.0,
+        "quantity_kg": 268796000.0
+      },
+      {
+        "partner": "Nigeria",
+        "value_usd": 130818720.0,
+        "quantity_kg": 277205000.0
+      },
+      {
+        "partner": "Pakistan",
+        "value_usd": 111942800.0,
+        "quantity_kg": 206593000.0
+      },
+      {
+        "partner": "Italy",
+        "value_usd": 108678720.0,
+        "quantity_kg": 203737000.0
+      },
+      {
+        "partner": "Ukraine",
+        "value_usd": 107560960.0,
+        "quantity_kg": 197283000.0
+      },
+      {
+        "partner": "United Kingdom",
+        "value_usd": 107522940.0,
+        "quantity_kg": 193956000.0
+      },
+      {
+        "partner": "Germany",
+        "value_usd": 95323010.0,
+        "quantity_kg": 185200000.0
+      },
+      {
+        "partner": "Belgium",
+        "value_usd": 93315970.0,
+        "quantity_kg": 178228000.0
+      },
+      {
+        "partner": "Vietnam",
+        "value_usd": 93135580.0,
+        "quantity_kg": 160386000.0
+      },
+      {
+        "partner": "Ireland",
+        "value_usd": 83498730.0,
+        "quantity_kg": 154794000.0
+      },
+      {
+        "partner": "Mexico",
+        "value_usd": 77384850.0,
+        "quantity_kg": 150660000.0
+      },
+      {
+        "partner": "Chile",
+        "value_usd": 74784710.0,
+        "quantity_kg": 124388000.0
+      },
+      {
+        "partner": "Bulgaria",
+        "value_usd": 68079410.0,
+        "quantity_kg": 132000000.0
+      },
+      {
+        "partner": "Latvia",
+        "value_usd": 66892400.0,
+        "quantity_kg": 122784000.0
+      },
+      {
+        "partner": "Slovenia",
+        "value_usd": 59649530.0,
+        "quantity_kg": 119672000.0
+      },
+      {
+        "partner": "Tanzania",
+        "value_usd": 55340750.0,
+        "quantity_kg": 130150000.0
+      },
+      {
+        "partner": "Namibia",
+        "value_usd": 53691010.0,
+        "quantity_kg": 99000000.0
+      },
+      {
+        "partner": "Portugal",
+        "value_usd": 49867470.0,
+        "quantity_kg": 103979000.0
+      },
+      {
+        "partner": "Angola",
+        "value_usd": 46709530.0,
+        "quantity_kg": 78697100.0
+      },
+      {
+        "partner": "Denmark",
+        "value_usd": 43581620.0,
+        "quantity_kg": 77710000.0
+      },
+      {
+        "partner": "Uruguay",
+        "value_usd": 40771860.0,
+        "quantity_kg": 72920000.0
+      },
+      {
+        "partner": "Libya",
+        "value_usd": 39426510.0,
+        "quantity_kg": 78842900.0
+      },
+      {
+        "partner": "Zambia",
+        "value_usd": 39397770.0,
+        "quantity_kg": 55000000.0
+      },
+      {
+        "partner": "Japan",
+        "value_usd": 39189720.0,
+        "quantity_kg": 96390400.0
+      },
+      {
+        "partner": "Mozambique",
+        "value_usd": 39027210.0,
+        "quantity_kg": 77000000.0
+      },
+      {
+        "partner": "Thailand",
+        "value_usd": 35927830.0,
+        "quantity_kg": 62081600.0
+      },
+      {
+        "partner": "Ghana",
+        "value_usd": 31489660.0,
+        "quantity_kg": 71705600.0
+      },
+      {
+        "partner": "Sweden",
+        "value_usd": 24878130.0,
+        "quantity_kg": 42000000.0
+      },
+      {
+        "partner": "Senegal",
+        "value_usd": 24663370.0,
+        "quantity_kg": 55254200.0
+      },
+      {
+        "partner": "Netherlands",
+        "value_usd": 14849670.0,
+        "quantity_kg": 31968000.0
+      },
+      {
+        "partner": "Togo",
+        "value_usd": 14815080.0,
+        "quantity_kg": 30016600.0
+      },
+      {
+        "partner": "Cameroon",
+        "value_usd": 14251820.0,
+        "quantity_kg": 33221800.0
+      },
+      {
+        "partner": "Croatia",
+        "value_usd": 13690330.0,
+        "quantity_kg": 21808000.0
+      },
+      {
+        "partner": "Mauritania",
+        "value_usd": 11603750.0,
+        "quantity_kg": 19143400.0
+      },
+      {
+        "partner": "Estonia",
+        "value_usd": 5909460.0,
+        "quantity_kg": 9400000.0
+      },
+      {
+        "partner": "Greece",
+        "value_usd": 4277510.0,
+        "quantity_kg": 7922000.0
+      },
+      {
+        "partner": "Colombia",
+        "value_usd": 2264160.0,
+        "quantity_kg": 4193260.0
+      },
+      {
+        "partner": "Madagascar",
+        "value_usd": 1945380.0,
+        "quantity_kg": 4984580.0
+      },
+      {
+        "partner": "Sierra Leone",
+        "value_usd": 1456450.0,
+        "quantity_kg": 2317720.0
+      },
+      {
+        "partner": "Malaysia",
+        "value_usd": 1426380.0,
+        "quantity_kg": 3182890.0
+      },
+      {
+        "partner": "Indonesia",
+        "value_usd": 1379380.0,
+        "quantity_kg": 3527980.0
+      },
+      {
+        "partner": "Mauritius",
+        "value_usd": 1285510.0,
+        "quantity_kg": 2099560.0
+      },
+      {
+        "partner": "Lebanon",
+        "value_usd": 1039110.0,
+        "quantity_kg": 2178640.0
+      },
+      {
+        "partner": "Peru",
+        "value_usd": 997100.0,
+        "quantity_kg": 1875000.0
+      },
+      {
+        "partner": "Jordan",
+        "value_usd": 996190.0,
+        "quantity_kg": 1752000.0
+      },
+      {
+        "partner": "Dominican Republic",
+        "value_usd": 991580.0,
+        "quantity_kg": 2284110.0
+      },
+      {
+        "partner": "Congo, Rep.",
+        "value_usd": 897590.0,
+        "quantity_kg": 1533490.0
+      },
+      {
+        "partner": "United Arab Emirates",
+        "value_usd": 668240.0,
+        "quantity_kg": 1632000.0
+      },
+      {
+        "partner": "Korea, Rep.",
+        "value_usd": 628670.0,
+        "quantity_kg": 1000000.0
+      },
+      {
+        "partner": "New Zealand",
+        "value_usd": 555030.0,
+        "quantity_kg": 984830.0
+      },
+      {
+        "partner": "Congo, Dem. Rep.",
+        "value_usd": 536720.0,
+        "quantity_kg": 1007100.0
+      },
+      {
+        "partner": "Venezuela",
+        "value_usd": 323620.0,
+        "quantity_kg": 599356.0
+      },
+      {
+        "partner": "Tunisia",
+        "value_usd": 173660.0,
+        "quantity_kg": 297862.0
+      },
+      {
+        "partner": "Saudi Arabia",
+        "value_usd": 137530.0,
+        "quantity_kg": 192000.0
+      },
+      {
+        "partner": "Ecuador",
+        "value_usd": 114370.0,
+        "quantity_kg": 200000.0
+      },
+      {
+        "partner": "Gambia, The",
+        "value_usd": 9040.0,
+        "quantity_kg": 8500.0
+      },
+      {
+        "partner": "Chad",
+        "value_usd": 120.0,
+        "quantity_kg": 100.0
+      },
+      {
+        "partner": "China",
+        "value_usd": 50.0,
+        "quantity_kg": 10.0
+      }
+    ]
+  },
+  "phosphate_rock_raw": {
+    "year": 2023,
+    "direction": "export",
+    "product_code": "251010",
+    "product_label": "Unground natural calcium phosphates, aluminium",
+    "rows": [
+      {
+        "partner": "India",
+        "value_usd": 224263220.0,
+        "quantity_kg": 1392970000.0
+      },
+      {
+        "partner": "Mexico",
+        "value_usd": 201080440.0,
+        "quantity_kg": 1135420000.0
+      },
+      {
+        "partner": "Pakistan",
+        "value_usd": 69268740.0,
+        "quantity_kg": 479445000.0
+      },
+      {
+        "partner": "New Zealand",
+        "value_usd": 50816490.0,
+        "quantity_kg": 194416000.0
+      },
+      {
+        "partner": "Norway",
+        "value_usd": 31450420.0,
+        "quantity_kg": 116300000.0
+      },
+      {
+        "partner": "Austria",
+        "value_usd": 28099840.0,
+        "quantity_kg": 122155000.0
+      },
+      {
+        "partner": "Peru",
+        "value_usd": 25101500.0,
+        "quantity_kg": 129742000.0
+      },
+      {
+        "partner": "Lebanon",
+        "value_usd": 14441950.0,
+        "quantity_kg": 119100000.0
+      },
+      {
+        "partner": "Poland",
+        "value_usd": 12057500.0,
+        "quantity_kg": 85734000.0
+      },
+      {
+        "partner": "Cyprus",
+        "value_usd": 11470840.0,
+        "quantity_kg": 103030000.0
+      },
+      {
+        "partner": "Japan",
+        "value_usd": 11421930.0,
+        "quantity_kg": 29885000.0
+      },
+      {
+        "partner": "Bulgaria",
+        "value_usd": 11099280.0,
+        "quantity_kg": 94123000.0
+      },
+      {
+        "partner": "Philippines",
+        "value_usd": 10865480.0,
+        "quantity_kg": 101610000.0
+      },
+      {
+        "partner": "Spain",
+        "value_usd": 9958840.0,
+        "quantity_kg": 87061000.0
+      },
+      {
+        "partner": "Bangladesh",
+        "value_usd": 7334220.0,
+        "quantity_kg": 27500000.0
+      },
+      {
+        "partner": "Turkey",
+        "value_usd": 7231970.0,
+        "quantity_kg": 108102000.0
+      },
+      {
+        "partner": "Netherlands",
+        "value_usd": 6443210.0,
+        "quantity_kg": 60100000.0
+      },
+      {
+        "partner": "Romania",
+        "value_usd": 4341800.0,
+        "quantity_kg": 19200000.0
+      },
+      {
+        "partner": "Korea, Rep.",
+        "value_usd": 4239230.0,
+        "quantity_kg": 36660000.0
+      },
+      {
+        "partner": "Colombia",
+        "value_usd": 3366940.0,
+        "quantity_kg": 14300000.0
+      },
+      {
+        "partner": "Belgium",
+        "value_usd": 2721710.0,
+        "quantity_kg": 12901000.0
+      },
+      {
+        "partner": "Portugal",
+        "value_usd": 2464260.0,
+        "quantity_kg": 14984000.0
+      },
+      {
+        "partner": "Israel",
+        "value_usd": 1708900.0,
+        "quantity_kg": 5500000.0
+      },
+      {
+        "partner": "Switzerland",
+        "value_usd": 1270880.0,
+        "quantity_kg": 12000000.0
+      },
+      {
+        "partner": "Germany",
+        "value_usd": 1252400.0,
+        "quantity_kg": 5500000.0
+      },
+      {
+        "partner": "United Kingdom",
+        "value_usd": 686120.0,
+        "quantity_kg": 2973780.0
+      },
+      {
+        "partner": "France",
+        "value_usd": 594490.0,
+        "quantity_kg": 4670000.0
+      },
+      {
+        "partner": "Suriname",
+        "value_usd": 35300.0,
+        "quantity_kg": 295130.0
+      }
+    ]
+  },
+  "specialty_imports": {
+    "year": 2023,
+    "direction": "import",
+    "product_code": "2835",
+    "product_label": "Phosphinates (hypophosphites), phosphonates (phosphites), phosphates and polyphosphates",
+    "rows": [
+      {
+        "partner": "Belgium",
+        "value_usd": 4356570.0,
+        "quantity_kg": 1833430.0
+      },
+      {
+        "partner": "France",
+        "value_usd": 3315810.0,
+        "quantity_kg": 1118390.0
+      },
+      {
+        "partner": "Germany",
+        "value_usd": 3197850.0,
+        "quantity_kg": 660080.0
+      },
+      {
+        "partner": "China",
+        "value_usd": 2303920.0,
+        "quantity_kg": 1330860.0
+      },
+      {
+        "partner": "Tunisia",
+        "value_usd": 2172820.0,
+        "quantity_kg": 1914000.0
+      },
+      {
+        "partner": "United States",
+        "value_usd": 1284800.0,
+        "quantity_kg": 400870.0
+      },
+      {
+        "partner": "Israel",
+        "value_usd": 898240.0,
+        "quantity_kg": 576000.0
+      },
+      {
+        "partner": "India",
+        "value_usd": 275060.0,
+        "quantity_kg": 56266.7
+      },
+      {
+        "partner": "Turkey",
+        "value_usd": 115470.0,
+        "quantity_kg": 52120.0
+      },
+      {
+        "partner": "Thailand",
+        "value_usd": 67360.0,
+        "quantity_kg": 28000.0
+      },
+      {
+        "partner": "Spain",
+        "value_usd": 67280.0,
+        "quantity_kg": 17057.8
+      },
+      {
+        "partner": "Slovenia",
+        "value_usd": 61440.0,
+        "quantity_kg": 40000.0
+      },
+      {
+        "partner": "Mexico",
+        "value_usd": 31830.0,
+        "quantity_kg": 9000.0
+      },
+      {
+        "partner": "Ireland",
+        "value_usd": 30640.0,
+        "quantity_kg": 5853.24
+      },
+      {
+        "partner": "United Kingdom",
+        "value_usd": 16650.0,
+        "quantity_kg": 1048.65
+      },
+      {
+        "partner": "Italy",
+        "value_usd": 14520.0,
+        "quantity_kg": 6463.0
+      },
+      {
+        "partner": "Romania",
+        "value_usd": 12140.0,
+        "quantity_kg": 2000.0
+      },
+      {
+        "partner": "Netherlands",
+        "value_usd": 9390.0,
+        "quantity_kg": 367.0
+      },
+      {
+        "partner": "Senegal",
+        "value_usd": 4760.0,
+        "quantity_kg": 2200.0
+      },
+      {
+        "partner": "Portugal",
+        "value_usd": 1110.0,
+        "quantity_kg": 225.0
+      },
+      {
+        "partner": "Czech Republic",
+        "value_usd": 480.0,
+        "quantity_kg": 29.0
+      },
+      {
+        "partner": "Russian Federation",
+        "value_usd": 70.0
+      },
+      {
+        "partner": "Switzerland",
+        "value_usd": 30.0,
+        "quantity_kg": 0.5
+      }
+    ]
+  }
+}
