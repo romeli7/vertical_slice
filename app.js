@@ -204,6 +204,7 @@ function calculateTop3Partners() {
   
   Object.values(TRADE_DATA.exports).forEach(category => {
     // Include all export categories regardless of year
+    console.log(`Processing category: ${category.label} with ${category.partners.length} partners`);
     category.partners.forEach(partner => {
       if (partner.country !== "European Union") {
         const value = partner.valueUSD || (partner.valueKUSD ? partner.valueKUSD * 1000 : 0);
