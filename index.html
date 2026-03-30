@@ -3,139 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Morocco Phosphate Value Chain - Interactive Map</title>
+  <title>Morocco Phosphate Export Intelligence</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div id="map"></div>
+  <!-- Slide Navigation -->
+  <div class="slide-nav">
+    <button class="nav-btn active" data-slide="1">Overview</button>
+    <button class="nav-btn" data-slide="2">Top Partners</button>
+    <button class="nav-btn" data-slide="3">Reports</button>
+  </div>
 
-  <!-- Intro -->
-  <div id="introPanel" class="panel intro">
-    <h2>Morocco's Phosphate Value Chain</h2>
-    <ul>
-      <li>Morocco holds 70% of global phosphate reserves.</li>
-      <li>Phosphates are vital for fertilizers, food, detergents, and industrial processes.</li>
-      <li>This map shows Morocco's extraction, processing, and export locations.</li>
-      <li>It reveals where value is created domestically versus captured abroad.</li>
-    </ul>
-    <div class="sources-inline">
-      Trade data: World Bank WITS (UN Comtrade), 2023-2024. Values converted from thousands USD to USD.
-      Sources: <a target="_blank" href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-phosphate.pdf">USGS 2025</a>; <a target="_blank" href="https://www.afdb.org/sites/default/files/documents/publications/phosphate_factsheet_final_nov_21.pdf">AfDB 2021</a>
+  <!-- Slide 1: All Export Data / Context -->
+  <div id="slide1" class="slide active">
+    <div class="slide-header">
+      <h1>Morocco Phosphate Export Intelligence</h1>
+      <p class="subtitle">Vertical slice of Morocco's phosphate export network analysis</p>
+      <div class="year-display" id="slide1-year">Loading...</div>
+    </div>
+    
+    <div id="map1" class="map-container"></div>
+    
+    <div class="stats-panel">
+      <h3>Export Summary</h3>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-value" id="total-partners">-</span>
+          <span class="stat-label">Total Partners</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value" id="total-value">-</span>
+          <span class="stat-label">Total Export Value</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value" id="total-categories">-</span>
+          <span class="stat-label">Product Categories</span>
+        </div>
+      </div>
+      <p class="context-text">This analysis shows Morocco's complete phosphate export network, highlighting the global reach of the world's largest phosphate reserves.</p>
     </div>
   </div>
 
-  <!-- Controls (single, concise panel) -->
-  <div id="controlsPanel" class="panel controls">
-    <h3>Explore trade flows</h3>
-
-    <div class="tabs">
-      <button class="tab active" data-tab="exports">Exports</button>
-      <button class="tab" data-tab="imports">Imports</button>
+  <!-- Slide 2: Top 3 Partners -->
+  <div id="slide2" class="slide">
+    <div class="slide-header">
+      <h1>Top 3 Export Partners</h1>
+      <p class="subtitle">Ranked by total export value across all categories</p>
+      <div class="year-display" id="slide2-year">Loading...</div>
     </div>
-
-    <div class="control-block">
-      <div class="label">Category</div>
-      <select id="categorySelect"></select>
-    </div>
-
-    <div class="control-block">
-      <div class="label">Metric</div>
-      <select id="metricSelect">
-        <option value="share" selected>Share (%)</option>
-        <option value="usd">USD</option>
-        <option value="tonnes">Tonnes</option>
-      </select>
-    </div>
-
-    <div class="control-block">
-      <label class="checkbox-label">
-        <input type="checkbox" id="toggleDomestic" checked>
-        Domestic links
-      </label>
-    </div>
-
-    <div class="control-block">
-      <div class="label">Show on map</div>
-      <label><input type="checkbox" id="toggleSites" checked> Sites</label>
-      <label><input type="checkbox" id="toggleFlows" checked> Flows</label>
-    </div>
-
-    <div class="hint" id="yearHint"></div>
-  </div>
-
-  <!-- Legend -->
-  <div id="legendPanel" class="panel legend">
-    <h3>Legend</h3>
-
-    <div class="legend-row">
-      <span class="dot mine"></span> Mine (extraction)
-    </div>
-    <div class="legend-row">
-      <span class="dot hub"></span> Chemical hub (bulk processing)
-    </div>
-    <div class="legend-row">
-      <span class="dot logistics"></span> Logistics node
-    </div>
-    <div class="legend-row">
-      <span class="dot partner"></span> Partner country
-    </div>
-
-    <div class="sep"></div>
-
-    <div class="legend-row">
-      <span class="line export"></span> Exports (Morocco → country)
-    </div>
-    <div class="legend-row">
-      <span class="line import"></span> Imports (country → Morocco)
-    </div>
-
-    <div class="sep"></div>
-
-    <div class="legend-row">
-      <span class="line domestic"></span> Domestic links (within Morocco)
-    </div>
-
-    <div class="sep"></div>
-
-    <div class="small">
-      <strong>Phosphate rock:</strong> extracted raw mineral.<br/>
-      <strong>Phosphoric acid:</strong> primary industrial chemical used to produce fertilizers.<br/>
-      <strong>Fertilizers:</strong> large-scale agricultural products used in farming, including both standard and customized blends.<br/>
-      <strong>Specialty phosphates:</strong> refined downstream salts and formulations imported from abroad, used in food, detergents, and industrial processes.
+    
+    <div id="map2" class="map-container"></div>
+    
+    <div class="top-partners-panel">
+      <h3>Leading Trade Partners</h3>
+      <div class="partners-ranking" id="partners-ranking">
+        <div class="partner-card rank-1">
+          <div class="rank-badge">1</div>
+          <div class="partner-info">
+            <h4 class="partner-name">-</h4>
+            <p class="partner-value">-</p>
+            <p class="partner-share">-</p>
+          </div>
+        </div>
+        <div class="partner-card rank-2">
+          <div class="rank-badge">2</div>
+          <div class="partner-info">
+            <h4 class="partner-name">-</h4>
+            <p class="partner-value">-</p>
+            <p class="partner-share">-</p>
+          </div>
+        </div>
+        <div class="partner-card rank-3">
+          <div class="rank-badge">3</div>
+          <div class="partner-info">
+            <h4 class="partner-name">-</h4>
+            <p class="partner-value">-</p>
+            <p class="partner-share">-</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Sources toggle -->
-  <button id="sourcesToggle" class="sources-toggle">Sources & Data</button>
-
-  <!-- Sources panel -->
-  <div id="sourcesPanel" class="panel sources hidden">
-    <div class="sources-head">
-      <h3>Sources & data basis</h3>
-      <button id="sourcesClose" class="xbtn">×</button>
+  <!-- Slide 3: Download Reports -->
+  <div id="slide3" class="slide">
+    <div class="slide-header">
+      <h1>Export Analysis Reports</h1>
+      <p class="subtitle">Detailed reports for top trading partners</p>
+      <div class="year-display" id="slide3-year">Loading...</div>
     </div>
-    <div class="small">
-      <p><strong>Trade data:</strong> World Bank WITS (UN Comtrade)</p>
-      <ul>
-        <li><a target="_blank" href="https://wits.worldbank.org/trade/comtrade/en/country/MAR/year/2024/tradeflow/Exports/partner/ALL/product/280920">Phosphoric acid exports (2024)</a></li>
-        <li><a target="_blank" href="https://wits.worldbank.org/trade/comtrade/en/country/MAR/year/2024/tradeflow/Exports/partner/ALL/product/3105">Fertilizer exports (2024)</a></li>
-        <li><a target="_blank" href="https://wits.worldbank.org/trade/comtrade/en/country/MAR/year/2023/tradeflow/Exports/partner/ALL/product/251010">Phosphate rock exports (2023)</a></li>
-        <li><a target="_blank" href="https://wits.worldbank.org/trade/comtrade/en/country/MAR/year/2023/tradeflow/Imports/partner/ALL/product/2835">Specialty phosphate imports (2023)</a></li>
-      </ul>
+    
+    <div class="reports-container">
+      <div class="report-intro">
+        <h3>Partner Analysis Reports</h3>
+        <p>Download comprehensive trade analysis reports for Morocco's top phosphate export partners. Each report includes detailed trade flows, product breakdowns, and market insights.</p>
+      </div>
       
-      <p><strong>Industrial context:</strong></p>
-      <ul>
-        <li><a target="_blank" href="https://www.ocpgroup.ma/en/what-we-do/industrial-operations">OCP Group industrial operations</a></li>
-        <li><a target="_blank" href="https://www.phosboucraa.ma/en">Phosboucraa southern operations</a></li>
-      </ul>
+      <div class="download-buttons" id="download-buttons">
+        <button class="download-btn" data-partner="1">
+          <span class="btn-icon">📊</span>
+          <div class="btn-content">
+            <span class="btn-title">-</span>
+            <span class="btn-subtitle">Full Analysis Report</span>
+          </div>
+          <span class="btn-arrow">→</span>
+        </button>
+        
+        <button class="download-btn" data-partner="2">
+          <span class="btn-icon">📊</span>
+          <div class="btn-content">
+            <span class="btn-title">-</span>
+            <span class="btn-subtitle">Full Analysis Report</span>
+          </div>
+          <span class="btn-arrow">→</span>
+        </button>
+        
+        <button class="download-btn" data-partner="3">
+          <span class="btn-icon">📊</span>
+          <div class="btn-content">
+            <span class="btn-title">-</span>
+            <span class="btn-subtitle">Full Analysis Report</span>
+          </div>
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
       
-      <p><strong>Global reserves:</strong></p>
-      <ul>
-        <li><a target="_blank" href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-phosphate.pdf">USGS Mineral Commodity Summaries 2025</a></li>
-        <li><a target="_blank" href="https://www.afdb.org/sites/default/files/documents/publications/phosphate_factsheet_final_nov_21.pdf">African Development Bank phosphate factsheet</a></li>
-      </ul>
+      <div class="report-note">
+        <p><strong>Data sources:</strong> World Bank WITS (UN Comtrade), USGS Mineral Commodity Summaries, OCP Group operations data</p>
+      </div>
     </div>
   </div>
 
